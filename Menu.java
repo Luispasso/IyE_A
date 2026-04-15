@@ -39,7 +39,7 @@ public class Menu
                     break;
                 case 6:
                     Exportar e = new Exportar();
-                    
+                    e.ExportarArchivo(Lista);
                     break;
                 case 7:
                       System.out.println("GRACIAS");

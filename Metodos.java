@@ -26,7 +26,38 @@ public class Metodos {
         }
         return Lista;
     }
+    
+    public Datos Consultar(int cedula, LinkedList<Datos> Lista)
+    {
+        Datos o = new Datos();
+        for (Datos d : Lista) {
+            if(d.getCedula() == cedula)
+            {
+                o.setCedula(cedula);
+                o.setCarnet(d.getCarnet());
+                o.setNombre(d.getNombre());
+            }
+        }
+        return o;
+    }
 
+     public LinkedList<Datos> Modificar(int cedula, LinkedList<Datos> Lista)
+    {
+        Scanner sc = new Scanner(System.in);
+        for (Datos o : Lista) {
+            if(o.getCedula() == cedula)
+            {
+                System.out.println("INGRESE EL NUEVO NOMBRE");
+                o.setNombre(sc.nextLine());
+                System.out.println("INGRESE LA NUEVO CEDULA");
+                o.setCedula(sc.nextInt());
+                System.out.println("INGRESE EL NUEVO CARNET");
+                o.setCarnet(sc.next());
+               
+            }
+        }
+        return Lista;
+    }
     public void MostrarLista(LinkedList<Datos> Lista)
     {
         
