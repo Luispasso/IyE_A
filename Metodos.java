@@ -58,6 +58,14 @@ public class Metodos {
         }
         return Lista;
     }
+     
+    public LinkedList<Datos> Eliminar(int cedula, LinkedList<Datos> Lista)
+    {
+        Lista.removeIf(x -> x.getCedula() == cedula);
+        return Lista;
+    }
+
+    
     public void MostrarLista(LinkedList<Datos> Lista)
     {
         

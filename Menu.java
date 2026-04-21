@@ -42,7 +42,11 @@ public class Menu
                     e.ExportarArchivo(Lista);
                     break;
                 case 7:
-                      System.out.println("GRACIAS");
+                    Importar i = new Importar();
+                    Lista = i.Importar();
+                    break;
+                case 8:
+                    System.out.println("GRACIAS");
                       continuar = false;
                     break;
                 default:
