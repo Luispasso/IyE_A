@@ -1,0 +1,8 @@
+NOMNRE: luis
+CARNET: : 665
+CEDULA: 1025
+------------------------------
+NOMNRE: carlos
+CARNET: : 5645
+CEDULA: 888897
+------------------------------

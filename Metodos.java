@@ -5,6 +5,7 @@ public class Metodos {
     public LinkedList<Datos> LlenarLista(LinkedList<Datos> Lista)
     {
         Scanner sc = new Scanner(System.in);
+        Validaciones v = new Validaciones();
         boolean continuar = true;
         while (continuar) {
             Datos o = new Datos();
@@ -14,16 +15,25 @@ public class Metodos {
             o.setCarnet(sc.next());
             System.out.println("INGRESE LA CEDULA");
             o.setCedula(sc.nextInt());
-            Lista.add(o);
-
-            System.out.println("DESEA CONTINUAR");
-            System.out.println("1. SI");
-            System.out.println("2. NO");
-            int opc = sc.nextInt();
-            sc.nextLine();
-            if(opc == 2)
+            if(v.ValidarCedula(o.getCedula(), Lista))
+            {
+                System.out.println("EL ESTUDIANTE YA EXISTE, POR FAVOR VALIDE LOS DATOS");
+            }
+            else{
+                Lista.add(o);
+                System.out.println("DESEA CONTINUAR");
+                System.out.println("1. SI");
+                System.out.println("2. NO");
+                 int opc = v.ValidarEntero(sc);
+                sc.nextLine();
+                if(opc == 2)
                 continuar = false;
+            }
+
+         
         }
+        Exportar e = new Exportar();
+        e.ExportarArchivo(Lista);
         return Lista;
     }
     

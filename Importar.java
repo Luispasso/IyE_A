@@ -34,10 +34,11 @@ public class Importar {
                 {
                     if(d != null) 
                     {
-                        d.setCedula();
+                        d.setCedula(Integer.parseInt(Linea.substring(0)));
                     }
                 }
             }
+               System.out.println("ARCHIVO IMPORTADO CORRECTAMENTE");
         }
          catch(IOException e)
             {
